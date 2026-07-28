@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="statusbar">
+       <span class="dot" id="dot"></span>
+       <span class="tag">local</span>
+       <span class="sep"></span>
+       <span class="model-select" id="model" aria-label="Model">gemma3:4b</span>
+       <span class="endpoint">Ollama : 11434</span>  
+    </div>
+
+    <div class="log-wrap" id="logwrap">
+      <div class="log" id="log">
+        <div class="empty" id="empty">
+          <strong>Start a conversation</strong><br>
+          Everything runs on this machine - nothing leaves it
+        </div>
+      </div>
+    </div>
+
+    <div class="composer">
+        <div class="composer-inner">
+            <textarea id="input" rows="1" placeholder="Message your local model"></textarea>
+            <button class="send" id="send">Send</button>
+        </div>
+        <div class="hint" id="hint">Enter to send • Shift+Enter for a new line</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
